@@ -16,30 +16,30 @@ int main(){
 
 	int** m = nullptr;
 
-    	try {
-        	m = create(rows, cols);
-    	} catch (...) {
-        	return 2;
-    	}
+    try {
+        m = create(rows, cols);
+    } catch (...) {
+        return 2;
+    }
 
-    	std::cout << "Введите элементы матрицы построчно\n";
-    	for (size_t i = 0; i < rows && std::cin; ++i) {
-        	for (size_t j = 0; j < cols && std::cin; ++j) {
-            	std::cin >> m[i][j];
-        	}
-    	}
+    std::cout << "Введите элементы матрицы построчно\n";
+    for (size_t i = 0; i < rows && std::cin; ++i) {
+        for (size_t j = 0; j < cols && std::cin; ++j) {
+            std::cin >> m[i][j];
+        }
+    }
 
-    	if (!std::cin) {
-        	remove(m, rows, cols);
-        	return 1;
-    	}
+    if (!std::cin) {
+        remove(m, rows, cols);
+        return 1;
+    }
 
-    	std::cout << "Ваша матрица\n";
-    	output(m, rows, cols);
+    std::cout << "Ваша матрица\n";
+    output(m, rows, cols);
 
-    	remove(m, rows, cols);
+    remove(m, rows, cols);
 
-    	return 0;
+    return 0;
 }
 
 void input(int** m, size_t rows, size_t cols) {}
